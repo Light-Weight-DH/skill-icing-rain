@@ -6,7 +6,7 @@ Claude Code skill for creating standardized project instruction templates.
 
 ---
 
-## 🎯 What is this?
+## What is this?
 
 새 프로젝트를 시작할 때마다:
 - 어떤 문서를 작성해야 할지 고민하시나요?
@@ -21,7 +21,7 @@ Claude Code skill for creating standardized project instruction templates.
 
 ---
 
-## 📦 What gets created?
+## What gets created?
 
 ```
 project-instructions/
@@ -289,7 +289,7 @@ code 00_PROJECT.md
 
 ---
 
-## 🛠️ Requirements
+##  Requirements
 
 - Claude Code (또는 Claude API 접근 가능한 환경)
 - Git (선택사항, 버전 관리용)
@@ -297,13 +297,13 @@ code 00_PROJECT.md
 
 ---
 
-## 📜 License
+## License
 
 MIT License - 자유롭게 사용하고 수정하세요!
 
 ---
 
-## 🙏 Contributing
+## Contributing
 
 개선 아이디어나 버그 리포트는 Issues에 올려주세요!
 
@@ -314,12 +314,6 @@ Pull Requests도 환영합니다.
 ## ⭐ Star this repo!
 
 이 스킬이 유용하다면 ⭐️ Star를 눌러주세요!
-
----
-
-## 📧 Contact
-
-질문이나 피드백: [GitHub Issues](https://github.com/YOUR_USERNAME/instruction-template-skill/issues)
 
 ---
 
