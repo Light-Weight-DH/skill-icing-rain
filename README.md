@@ -8,7 +8,7 @@ Claude Code skill for creating standardized project instruction templates.
 
 ## ✨ What's New
 
-### v1.1 - 2025-01-10
+### v1.1 - 2025-11-10
 
 **UI/UX 템플릿 대폭 개선**
 - ✅ **Wireframe 중심 설계**: 복잡한 CSS 변수 대신 실용적인 wireframe + 설명 방식
