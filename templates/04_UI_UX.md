@@ -1,268 +1,190 @@
 # UI/UX 명세
 
-<!-- 웹 애플리케이션의 UI/UX 디자인 및 사용자 경험 가이드 -->
+<!-- 웹 애플리케이션의 UI/UX 디자인을 wireframe과 설명으로 정리 -->
 <!-- 주의: 이 파일은 web-app 타입 프로젝트에만 해당됩니다 -->
+
+---
+
+## 디자인 원칙 (Laws of UX 기반)
+
+<!-- https://lawsofux.com/ 참고 -->
+
+### 적용할 UX 법칙
+<!-- 프로젝트에 적용할 주요 UX 원칙을 선택하세요 -->
+
+**선택한 법칙:**
+- [ ] **Hick's Law**: 선택지가 많을수록 결정 시간이 길어짐 → 선택지 최소화
+- [ ] **Miller's Law**: 단기 기억은 7±2개 항목만 유지 → 정보 그룹화
+- [ ] **Fitts's Law**: 클릭 대상이 크고 가까울수록 빠름 → 버튼 크기 충분히
+- [ ] **Jakob's Law**: 사용자는 다른 사이트의 UX에 익숙함 → 익숙한 패턴 사용
+- [ ] **Law of Proximity**: 가까이 있는 요소들은 관련있다고 인식 → 그룹화
+- [ ] **Aesthetic-Usability Effect**: 아름다운 디자인이 사용성 좋다고 인식 → 시각적 완성도
+- [ ] **Parkinson's Law**: 작업은 주어진 시간만큼 확장됨 → 명확한 마감 표시
+
 
 ---
 
 ## 디자인 시스템
 
-### 색상 팔레트
-
+### 색상
 ```css
-/* Primary Colors */
---primary-100: #       /* 가장 밝은 */
---primary-200: #
---primary-300: #
---primary-400: #
---primary-500: #       /* 메인 색상 */
---primary-600: #
---primary-700: #
---primary-800: #
---primary-900: #       /* 가장 어두운 */
-
-/* Secondary Colors */
---secondary-500: #
-
-/* Neutral Colors */
---gray-50: #
---gray-100: #
---gray-200: #
---gray-500: #
---gray-900: #
-
-/* Semantic Colors */
---success: #
---warning: #
---error: #
---info: #
-
-/* Background */
---bg-primary: #
---bg-secondary: #
-
-/* Text */
---text-primary: #
---text-secondary: #
---text-disabled: #
+Primary: #
+Secondary: #
+Accent: #
+Background: #
+Text: #
 ```
-
-
----
 
 ### 타이포그래피
-
-```css
-/* Headings */
---font-family-heading:
---font-size-h1:
---font-size-h2:
---font-size-h3:
-
-/* Body */
---font-family-body:
---font-size-base:
---font-size-sm:
---font-size-lg:
-
-/* Code */
---font-family-mono:
-```
-
-
----
+- Heading:
+- Body:
+- Code/Mono:
 
 ### Spacing
-
-```css
---spacing-xs: 4px
---spacing-sm: 8px
---spacing-md: 16px
---spacing-lg: 24px
---spacing-xl: 32px
---spacing-2xl: 48px
-```
-
+- 기본 간격: 8px 단위 사용
+- 주요 간격: 8px, 16px, 24px, 32px, 48px
 
 ---
 
-### Border & Radius
+## 페이지별 디자인
 
-```css
---border-width: 1px
---border-radius-sm: 4px
---border-radius-md: 8px
---border-radius-lg: 16px
---border-radius-full: 9999px
-```
+### 페이지 1: [페이지명]
 
+#### Wireframe
+<!-- assets/images/ 폴더에 wireframe 이미지를 저장하고 링크하세요 -->
+![Wireframe](../assets/images/page1-wireframe.png)
 
----
-
-### Shadow
-
-```css
---shadow-sm:
---shadow-md:
---shadow-lg:
-```
-
-
----
-
-## 레이아웃
-
-### 전체 레이아웃 구조
-
-```
-┌─────────────────────────────────────┐
-│            Header/Nav                │
-├──────────┬──────────────────────────┤
-│          │                          │
-│ Sidebar  │      Main Content        │
-│ (선택)   │                          │
-│          │                          │
-│          │                          │
-├──────────┴──────────────────────────┤
-│            Footer (선택)             │
-└─────────────────────────────────────┘
-```
-
-### 반응형 브레이크포인트
-
-```css
-/* Mobile First */
---breakpoint-sm: 640px   /* Mobile */
---breakpoint-md: 768px   /* Tablet */
---breakpoint-lg: 1024px  /* Desktop */
---breakpoint-xl: 1280px  /* Large Desktop */
-```
-
-
----
-
-## 페이지별 명세
-
-### 1. [페이지명 - 예: 홈 페이지]
-
-**경로:** `/`
-
-#### 레이아웃
-
+<!-- 또는 간단한 ASCII art로 표현 -->
 ```
 ┌─────────────────────────────────────┐
 │  Header                              │
-│  ├─ Logo                             │
-│  ├─ Navigation Menu                  │
-│  └─ User Menu                        │
+│  [Logo]  [Nav]          [User]      │
 ├─────────────────────────────────────┤
 │                                      │
 │  Hero Section                        │
 │  ├─ Title                            │
 │  ├─ Description                      │
-│  └─ CTA Button                       │
+│  └─ [CTA Button]                     │
 │                                      │
 ├─────────────────────────────────────┤
-│                                      │
 │  Main Content                        │
-│  └─ [컨텐츠 설명]                    │
+│  [Content Area]                      │
 │                                      │
 └─────────────────────────────────────┘
 ```
 
-#### 주요 컴포넌트
+#### 디자인 설명
+<!-- wireframe을 보며 각 영역을 설명하세요 -->
 
-**Header**
-- Logo (클릭 시 홈으로)
-- Navigation Menu
-- User Avatar/Login Button
+**Header 영역:**
+- 위치: 화면 최상단, 고정 (스크롤 시에도 유지)
+- 구성:
+  - 왼쪽: 로고 (클릭 시 홈으로)
+  - 중앙: 주요 네비게이션 메뉴 (3-5개)
+  - 오른쪽: 사용자 아바타 또는 로그인 버튼
+- 스타일:
+  - 배경: 흰색 또는 투명
+  - 높이: 64px
+  - 그림자: 약한 하단 그림자
 
-**Hero Section**
-- 제목:
-- 설명:
-- CTA 버튼:
+**Hero Section:**
+- 위치: Header 바로 아래
+- 구성:
+  - 제목: 큰 폰트 (48px), 굵게
+  - 부제목: 설명 텍스트 (18px)
+  - CTA 버튼: 주요 액션 버튼 (예: "시작하기")
+- 스타일:
+  - 배경: 그라데이션 또는 이미지
+  - 패딩: 상하 80px
 
-**Main Content**
-<!-- 주요 콘텐츠 영역 설명 -->
+**Main Content:**
+- 실제 콘텐츠가 표시되는 영역
+- (구체적으로 설명)
 
 
-#### 사용자 플로우
+#### 동작 기능 설명
+<!-- 사용자가 어떻게 상호작용하는지 설명하세요 -->
 
-```
-1. 페이지 진입
-   ↓
-2. Hero Section 확인
-   ↓
-3. CTA 버튼 클릭
-   ↓
-4. [다음 액션]
-```
+**Header 네비게이션:**
+- 메뉴 항목 hover 시: 색상 변경 (Primary 색상)
+- 현재 페이지 메뉴는 밑줄 표시
+- 모바일: 햄버거 메뉴로 전환
 
-#### 상태 관리
-- Loading State: (로딩 중일 때 표시할 내용)
-- Empty State: (데이터 없을 때)
-- Error State: (에러 발생 시)
+**CTA 버튼:**
+- 클릭 시: /signup 페이지로 이동
+- Hover: 버튼 확대 (scale 1.05)
+- 로딩 중: 스피너 표시
+
+**스크롤 동작:**
+- Header는 항상 고정
+- 스크롤 다운: Header에 그림자 추가
+- 부드러운 스크롤 애니메이션
+
+
+#### 반응형 (모바일)
+<!-- 모바일에서 어떻게 변경되는지 -->
+
+- 768px 이하:
+  - 네비게이션 → 햄버거 메뉴
+  - Hero 제목 폰트 크기 → 32px
+  - 패딩 축소
 
 
 ---
 
-### 2. [페이지명 - 예: 대시보드]
+### 페이지 2: [페이지명]
 
-**경로:** `/dashboard`
-
-#### 레이아웃
+#### Wireframe
+![Wireframe](../assets/images/page2-wireframe.png)
 
 ```
 ┌─────────────────────────────────────┐
 │  Header                              │
-├────────┬────────────────────────────┤
-│        │                            │
-│ Side   │  Dashboard Content         │
-│ Nav    │  ├─ Stats Cards            │
-│        │  ├─ Charts                 │
-│ ├─ Menu│  └─ Recent Activity        │
-│ ├─ Menu│                            │
-│ └─ Menu│                            │
-│        │                            │
-└────────┴────────────────────────────┘
+├─────────┬───────────────────────────┤
+│ Sidebar │  Content Area             │
+│         │                           │
+│ [Nav]   │  [Main Content]           │
+│ [Nav]   │                           │
+│ [Nav]   │                           │
+│         │                           │
+└─────────┴───────────────────────────┘
 ```
 
-#### 주요 컴포넌트
+#### 디자인 설명
 
-**Sidebar**
-- Menu Items:
-  -
-  -
-
-**Stats Cards**
-- Card 1: (예: 총 사용자 수)
-- Card 2: (예: 오늘 방문자)
-- Card 3:
-
-**Charts**
-<!-- 차트 종류 및 표시할 데이터 -->
+**Sidebar:**
+- 위치: 왼쪽 고정
+- 너비: 240px
+- 구성:
+  - 메뉴 항목들
+  - 하단: 설정 버튼
+- 스타일:
+  - 배경: 연한 회색
+  - 선택된 메뉴: Primary 색상 배경
 
 
-#### 사용자 플로우
+**Content Area:**
+- 위치: Sidebar 오른쪽
+- 구성:
+  - (구체적으로 설명)
 
 
-#### 상호작용
-<!-- 사용자가 클릭하거나 상호작용할 수 있는 요소 -->
+#### 동작 기능 설명
+
+**Sidebar 메뉴:**
+- 클릭 시: Content Area 내용 변경 (페이지 새로고침 없이)
+- 활성 메뉴: 하이라이트 표시
+
+
+**Content Area:**
+- (구체적인 동작 설명)
 
 
 ---
 
-### 3. [페이지명]
+### 페이지 3: [필요한 만큼 추가]
 
-**경로:**
-
-#### 레이아웃
-
-
-#### 주요 컴포넌트
-
-
-#### 사용자 플로우
+...
 
 
 ---
@@ -271,49 +193,33 @@
 
 ### Button
 
-**Variants:**
-- Primary: 주요 액션
-- Secondary: 보조 액션
-- Outline: 테두리만
-- Ghost: 배경 없음
-- Danger: 삭제 등 위험한 액션
+**디자인:**
+- Primary: 배경색 Primary, 텍스트 흰색, border-radius 8px
+- Secondary: 배경 투명, 테두리 Primary, 텍스트 Primary
+- 크기: 높이 40px (기본), padding 좌우 24px
 
-**Sizes:**
-- Small
-- Medium (기본)
-- Large
-
-**States:**
-- Default
-- Hover
-- Active
-- Disabled
-- Loading
+**동작:**
+- Hover: 약간 어두워짐 (opacity 0.9)
+- Active: scale 0.98
+- Disabled: opacity 0.5, 클릭 불가
 
 
----
+### Input Field
 
-### Input
+**디자인:**
+- 테두리: 1px solid 회색
+- border-radius: 4px
+- 높이: 40px
+- padding: 12px
 
-**Types:**
-- Text
-- Email
-- Password
-- Number
-- Textarea
-
-**States:**
-- Default
-- Focus
-- Error
-- Disabled
+**동작:**
+- Focus: 테두리 Primary 색상, 약한 그림자
+- Error: 테두리 빨간색, 하단에 에러 메시지 표시
 
 
----
+### Modal
 
-### Modal/Dialog
-
-**구조:**
+**디자인:**
 ```
 ┌─────────────────────────┐
 │  [X] Title               │
@@ -326,114 +232,92 @@
 └─────────────────────────┘
 ```
 
-
----
-
-### Card
-
-**구조:**
-```
-┌─────────────────────────┐
-│  Header                  │
-├─────────────────────────┤
-│                         │
-│  Content                │
-│                         │
-├─────────────────────────┤
-│  Footer (선택)           │
-└─────────────────────────┘
-```
+**동작:**
+- 배경: 반투명 검은색 (opacity 0.5)
+- 애니메이션: 페이드 인/아웃
+- ESC 키: 닫기
+- 배경 클릭: 닫기
 
 
 ---
 
-## 사용자 경험 (UX)
+## UX 플로우
 
-### 로딩 상태
-<!-- 데이터 로딩 중 사용자에게 보여줄 것 -->
-- Skeleton Screen
-- Spinner
-- Progress Bar
+### 주요 사용자 플로우 1: [예: 회원가입]
 
-### 빈 상태 (Empty State)
-<!-- 데이터가 없을 때 -->
-- 아이콘:
-- 메시지: "아직 데이터가 없습니다"
-- CTA: "새로 추가하기"
+```
+1. 메인 페이지 진입
+   ↓
+2. "시작하기" 버튼 클릭
+   ↓
+3. 회원가입 폼 표시
+   ↓ (입력 중 실시간 검증)
+4. "가입 완료" 버튼 클릭
+   ↓ (로딩 표시)
+5. 완료 메시지 + 자동 로그인
+   ↓
+6. 대시보드로 이동
+```
 
-### 에러 상태
-<!-- 에러 발생 시 -->
-- 에러 메시지 표시
-- 재시도 버튼
-- 도움말 링크
-
-### 성공 피드백
-<!-- 작업 성공 시 -->
-- Toast 알림
-- Success 메시지
-- 자동 redirect (필요시)
+**각 단계별 UI 설명:**
+- Step 2: 버튼 hover 시 확대 효과
+- Step 3: 각 필드마다 placeholder 제공, 포커스 시 레이블 위로 이동
+- Step 4: 버튼 비활성화, 스피너 표시
+- Step 5: 성공 토스트 메시지 (3초 후 자동 사라짐)
 
 
 ---
 
-## 애니메이션 및 트랜지션
+## 애니메이션 & 트랜지션
 
-```css
---transition-fast: 150ms ease-in-out
---transition-base: 250ms ease-in-out
---transition-slow: 350ms ease-in-out
-```
+### 페이지 전환
+- Duration: 300ms
+- Easing: ease-in-out
+- 효과: 페이드 + 약간의 슬라이드
 
-### 사용 예시
-- 페이지 전환:
-- 모달 열기/닫기:
-- 드롭다운:
-- 호버 효과:
+### 버튼 Hover
+- Duration: 150ms
+- 효과: scale 1.05, 색상 변경
 
+### 모달 열기/닫기
+- Duration: 250ms
+- 효과: fade-in/out + scale
 
 ---
 
 ## 접근성 (Accessibility)
 
 ### 체크리스트
-- [ ] 키보드 네비게이션 지원
-- [ ] 포커스 인디케이터
+- [ ] 모든 이미지에 alt 텍스트
+- [ ] 키보드만으로 전체 네비게이션 가능
+- [ ] 포커스 인디케이터 명확히 표시
+- [ ] 색상 대비 WCAG AA 기준 충족 (최소 4.5:1)
 - [ ] ARIA 레이블 사용
-- [ ] 적절한 색상 대비 (WCAG AA 이상)
-- [ ] Alt 텍스트 제공
-- [ ] 스크린 리더 지원
+- [ ] 스크린 리더 테스트
+
+---
+
+## 참고 이미지
+
+<!-- assets/images/ 폴더에 저장한 이미지들 -->
+
+- 메인 페이지 wireframe: [page1-wireframe.png](../assets/images/page1-wireframe.png)
+- 대시보드 wireframe: [page2-wireframe.png](../assets/images/page2-wireframe.png)
+- UI 참고 디자인: [reference-design.png](../assets/images/reference-design.png)
 
 
 ---
 
-## 다크 모드 (선택)
+## 디자인 참고 자료
 
-### 색상 변경
-```css
-[data-theme="dark"] {
-  --bg-primary: #
-  --text-primary: #
-  /* ... */
-}
-```
-
-
----
-
-## 참고 이미지 및 와이어프레임
-
-<!-- assets/images/ 폴더에 UI 스케치, 와이어프레임, 디자인 시안 저장 -->
-
-- 메인 화면: [assets/images/main-wireframe.png](../assets/images/main-wireframe.png)
-- 대시보드: [assets/images/dashboard-wireframe.png](../assets/images/dashboard-wireframe.png)
+<!-- 영감을 받은 사이트나 디자인 시스템 -->
+-
 -
 
-
 ---
 
-## 참고 디자인 시스템
+## Notes
 
-<!-- 영감을 받거나 참고한 디자인 시스템 -->
--
+<!-- 추가 고려사항이나 아이디어 -->
 -
 

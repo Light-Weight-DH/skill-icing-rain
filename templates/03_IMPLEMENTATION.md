@@ -4,6 +4,125 @@
 
 ---
 
+## 코딩 원칙 및 베스트 프랙티스
+
+<!-- 코드 작성 시 따라야 할 기본 원칙들 -->
+
+### SOLID 원칙 적용
+<!-- 객체지향 설계의 5대 원칙 -->
+
+**적용할 원칙:**
+- [ ] **S**ingle Responsibility: 하나의 클래스는 하나의 책임만
+- [ ] **O**pen/Closed: 확장에는 열려있고, 수정에는 닫혀있게
+- [ ] **L**iskov Substitution: 자식 클래스는 부모 클래스를 대체 가능
+- [ ] **I**nterface Segregation: 인터페이스는 작고 구체적으로
+- [ ] **D**ependency Inversion: 구체가 아닌 추상에 의존
+
+
+### Clean Code 원칙
+
+**명명 규칙:**
+- 변수명: 의미있고 발음 가능한 이름 사용
+- 함수명: 동사로 시작 (get, set, create, update, delete)
+- 클래스명: 명사 사용
+- 불린 변수: is, has, can 등으로 시작
+
+**함수 작성:**
+- 한 함수는 한 가지 일만 (Single Responsibility)
+- 함수 길이: 최대 20줄 권장
+- 매개변수: 최대 3개 권장 (그 이상이면 객체로 묶기)
+- 사이드 이펙트 최소화
+
+**코드 구조:**
+- DRY (Don't Repeat Yourself): 중복 제거
+- KISS (Keep It Simple, Stupid): 단순하게 유지
+- YAGNI (You Aren't Gonna Need It): 필요한 것만 구현
+
+
+### 에러 처리
+
+**원칙:**
+- 예외는 예외적인 상황에만 사용
+- 에러 메시지는 명확하고 구체적으로
+- 에러 로깅 필수
+- 사용자에게는 친절한 메시지, 로그에는 디버깅 정보
+
+**구현 예시:**
+```python
+# Bad
+try:
+    result = risky_operation()
+except:
+    pass  # 에러 무시
+
+# Good
+try:
+    result = risky_operation()
+except SpecificException as e:
+    logger.error(f"Operation failed: {e}", exc_info=True)
+    raise UserFriendlyException("작업 중 오류가 발생했습니다. 다시 시도해주세요.")
+```
+
+
+### 코드 리뷰 체크리스트
+
+**기능:**
+- [ ] 요구사항 충족
+- [ ] 엣지 케이스 처리
+- [ ] 에러 핸들링
+
+**코드 품질:**
+- [ ] 읽기 쉬운 코드
+- [ ] 적절한 주석 (why, not what)
+- [ ] 네이밍 일관성
+- [ ] 중복 코드 없음
+
+**성능:**
+- [ ] N+1 쿼리 문제 없음
+- [ ] 불필요한 반복문 없음
+- [ ] 적절한 캐싱
+
+**보안:**
+- [ ] SQL Injection 방어
+- [ ] XSS 방어
+- [ ] 민감 정보 로깅 금지
+- [ ] 인증/인가 적용
+
+
+### Git Commit 컨벤션
+
+**Commit Message 형식:**
+```
+<type>: <subject>
+
+<body>
+
+<footer>
+```
+
+**Type:**
+- `feat`: 새 기능
+- `fix`: 버그 수정
+- `docs`: 문서 수정
+- `style`: 코드 포맷팅 (기능 변경 없음)
+- `refactor`: 리팩토링
+- `test`: 테스트 추가/수정
+- `chore`: 빌드, 설정 파일 수정
+
+**예시:**
+```
+feat: 사용자 인증 API 추가
+
+- JWT 기반 인증 구현
+- 로그인/로그아웃 엔드포인트 추가
+- 리프레시 토큰 발급 기능
+
+Closes #123
+```
+
+
+---
+
 ## Phase 1: 환경 설정
 
 ### 필요 사항
