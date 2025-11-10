@@ -6,7 +6,26 @@ Claude Code skill for creating standardized project instruction templates.
 
 ---
 
-## What is this?
+## ✨ What's New
+
+### v1.1 - 2025-01-10
+
+**UI/UX 템플릿 대폭 개선**
+- ✅ **Wireframe 중심 설계**: 복잡한 CSS 변수 대신 실용적인 wireframe + 설명 방식
+- ✅ **Laws of UX 통합**: 7가지 UX 원칙 체크리스트 추가 (Hick's Law, Miller's Law 등)
+- ✅ **디자인/기능 분리**: 시각 디자인과 동작 기능을 명확히 구분
+
+**코딩 품질 가이드 추가**
+- ✅ **SOLID 원칙**: 객체지향 설계 5대 원칙 체크리스트
+- ✅ **Clean Code**: 명명 규칙, 함수 작성 가이드, DRY/KISS/YAGNI
+- ✅ **에러 처리 표준**: Good vs Bad 코드 예시
+- ✅ **Git 컨벤션**: Conventional Commits 형식 가이드
+
+> 💡 이제 Claude가 instruction을 읽고 **UX 원칙과 코딩 베스트 프랙티스를 자동 적용**한 코드를 생성합니다!
+
+---
+
+## 🎯 What is this?
 
 새 프로젝트를 시작할 때마다:
 - 어떤 문서를 작성해야 할지 고민하시나요?
@@ -46,8 +65,8 @@ project-instructions/
 
 #### Option A: Clone this repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/instruction-template-skill.git
-cd instruction-template-skill
+git clone https://github.com/Light-Weight-DH/skill-icing-rain.git
+cd skill-icing-rain
 ```
 
 #### Option B: Download ZIP
@@ -69,7 +88,7 @@ cd my-new-project
 
 3. Skill 파일 경로를 Claude에게 제공하고 실행
 ```
-@instruction-template-skill/create-instruction.md
+@skill-icing-rain/create-instruction.md
 
 새 프로젝트 instruction 만들어줘
 ```
@@ -128,43 +147,70 @@ assets/
 
 ---
 
-## 💡 Usage Examples
+## 🎬 실전 시나리오
 
-### Example 1: AI 챗봇 프로젝트
+### Scenario: AI 이메일 분류 시스템 만들기
 
-```markdown
-# 00_PROJECT.md
----
+**Step 1: Instruction 생성 (5분)**
+```bash
+@skill-icing-rain/create-instruction.md
+
+새 프로젝트 instruction 만들어줘. 타입은 web-app.
+```
+
+**Step 2: 빠른 채우기 (20분)**
+
+`00_PROJECT.md`:
+```yaml
 project:
-  name: "Customer Support AI Chatbot"
+  name: "AI Email Classifier"
   type: "web-app"
-
 tech_stack:
-  frontend: ["React", "TypeScript", "Tailwind"]
+  frontend: ["Vue 3", "TypeScript"]
   backend: ["FastAPI", "PostgreSQL"]
-  ai: ["OpenAI GPT-4", "LangChain", "FAISS"]
----
-
-## 1줄 요약
-고객 문의를 자동으로 답변하는 AI 챗봇 시스템
+  ai: ["OpenAI GPT-4", "LangChain"]
 ```
 
-### Example 2: 데이터 분석 CLI 도구
+`04_UI_UX.md`:
+- Laws of UX 선택: Hick's Law ✅, Jakob's Law ✅, Miller's Law ✅
+- Wireframe 스케치 업로드
+- 각 영역 설명 작성
 
-```markdown
-# 00_PROJECT.md
----
-project:
-  name: "Sales Data Analyzer"
-  type: "cli"
+`03_IMPLEMENTATION.md`:
+- SOLID 원칙 체크 ✅
+- Clean Code 가이드 확인 ✅
 
-tech_stack:
-  backend: ["Python", "Pandas", "Click"]
----
-
-## 1줄 요약
-CSV 판매 데이터를 분석하고 리포트를 생성하는 CLI 도구
+**Step 3: Claude와 협업**
 ```
+project-instructions/를 읽고
+Laws of UX와 Clean Code 원칙에 맞게 백엔드를 구현해줘
+```
+
+**Claude 생성 결과:**
+```python
+# backend/api/email.py
+# ✅ Single Responsibility: 이메일 분류만 담당
+# ✅ Clean Code: 명확한 함수명, 3개 이하 파라미터
+
+class EmailClassifier:
+    """이메일을 카테고리별로 분류"""
+
+    def classify(self, email: Email) -> Category:
+        # ✅ SOLID: 추상에 의존
+        # ✅ 에러 처리: 명확한 예외
+        try:
+            result = self._llm.classify(email.content)
+            return Category(result)
+        except ClassificationError as e:
+            logger.error(f"Classification failed: {e}")
+            raise UserFriendlyException("분류 중 오류가 발생했습니다.")
+```
+
+**결과:**
+- ✅ SOLID 원칙을 따르는 깔끔한 코드
+- ✅ Laws of UX를 고려한 API 설계 (선택지 최소화)
+- ✅ 일관된 에러 핸들링
+- ✅ 표준 Git 커밋 메시지
 
 ---
 
@@ -216,7 +262,7 @@ Claude가 할 일:
 `templates/` 폴더의 파일들을 직접 수정할 수 있습니다:
 
 ```bash
-cd instruction-template-skill/templates
+cd skill-icing-rain/templates
 # 원하는 에디터로 수정
 code 00_PROJECT.md
 ```
@@ -227,6 +273,47 @@ code 00_PROJECT.md
 
 1. `templates/SECURITY.md` 생성
 2. `create-instruction.md` 수정하여 복사 로직 추가
+
+---
+
+## 🌟 Key Features
+
+### 1. Wireframe 중심 UI/UX 설계
+**Before:** 세세한 CSS 변수와 복잡한 템플릿
+**After:** 실용적인 Wireframe + 설명 방식
+
+- 이미지 또는 ASCII art로 화면 구조 표현
+- 각 영역별 디자인 설명 (위치, 구성, 스타일)
+- 동작 기능 별도 정리 (hover, 클릭, 애니메이션)
+
+### 2. Laws of UX 적용
+7가지 UX 원칙을 체크리스트로 제공:
+- **Hick's Law**: 선택지 최소화로 빠른 결정
+- **Miller's Law**: 정보 그룹화 (7±2개 항목)
+- **Fitts's Law**: 클릭 영역 최적화
+- **Jakob's Law**: 익숙한 패턴 사용
+- **Law of Proximity**: 관련 요소 그룹화
+- **Aesthetic-Usability Effect**: 시각적 완성도
+- **Parkinson's Law**: 명확한 마감 표시
+
+### 3. 코딩 품질 보장
+**SOLID 원칙**
+- Single Responsibility, Open/Closed, Liskov Substitution
+- Interface Segregation, Dependency Inversion
+
+**Clean Code 가이드**
+- 명명 규칙 (변수, 함수, 클래스)
+- 함수 작성 (한 가지 일만, 최대 20줄, 매개변수 3개 이하)
+- DRY, KISS, YAGNI 원칙
+
+**에러 처리 & Git 컨벤션**
+- Good vs Bad 코드 예시
+- Conventional Commits 형식
+
+### 4. AI 친화적 구조
+- Claude가 읽고 **바로 코드 생성** 가능
+- **UX 원칙과 코딩 표준 자동 적용**
+- 프롬프트 엔지니어링 불필요
 
 ---
 
@@ -298,9 +385,34 @@ MIT License - 자유롭게 사용하고 수정하세요!
 
 ---
 
-## Contributing
+## ❓ FAQ
 
-개선 아이디어나 버그 리포트는 Issues에 올려주세요!
+### Q: Claude Code 없이도 사용할 수 있나요?
+A: 네, 템플릿을 수동으로 복사해서 사용 가능합니다. 하지만 Claude Code와 함께 사용하면 자동화와 코드 생성의 이점을 얻을 수 있습니다.
+
+### Q: 모든 파일을 다 채워야 하나요?
+A: 아니요, 필요한 파일만 작성하세요. 예를 들어:
+- CLI 프로젝트 → 04_UI_UX.md 불필요
+- 간단한 스크립트 → 01_ARCHITECTURE.md만으로 충분
+- 필요한 섹션만 채우고 나머지는 삭제해도 됩니다
+
+### Q: 기존 프로젝트에도 적용 가능한가요?
+A: 네! 기존 프로젝트에 `project-instructions/` 폴더를 추가하여 문서화에 활용할 수 있습니다. 레거시 코드 리팩토링 시 특히 유용합니다.
+
+### Q: Laws of UX를 모두 적용해야 하나요?
+A: 아니요, 프로젝트에 맞는 원칙만 선택하세요. 체크리스트는 가이드일 뿐이며, 2-3개만 선택해도 충분합니다.
+
+### Q: SOLID 원칙을 잘 모르는데 사용할 수 있나요?
+A: 네! 03_IMPLEMENTATION.md에 각 원칙의 간단한 설명이 있습니다. Claude에게 "SOLID 원칙을 적용해서 구현해줘"라고 요청하면 Claude가 알아서 적용합니다.
+
+### Q: 여러 프로젝트에서 재사용할 수 있나요?
+A: 물론입니다! 한 번 채운 instruction을 복사해서 다른 프로젝트의 시작점으로 사용할 수 있습니다. 기술 스택이나 구조가 비슷한 프로젝트에 특히 유용합니다.
+
+---
+
+## 💬 Contributing
+
+개선 아이디어나 버그 리포트는 [Issues](https://github.com/Light-Weight-DH/skill-icing-rain/issues)에 올려주세요!
 
 Pull Requests도 환영합니다.
 
