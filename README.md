@@ -151,14 +151,14 @@ assets/
 
 ### Scenario: AI 이메일 분류 시스템 만들기
 
-**Step 1: Instruction 생성 (5분)**
+**Step 1: Instruction 생성**
 ```bash
 @skill-icing-rain/create-instruction.md
 
 새 프로젝트 instruction 만들어줘. 타입은 web-app.
 ```
 
-**Step 2: 빠른 채우기 (20분)**
+**Step 2: 양식 채우기**
 
 `00_PROJECT.md`:
 ```yaml
