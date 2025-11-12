@@ -67,6 +67,7 @@ project-instructions/
 - templates/04_UI_UX.md → project-instructions/04_UI_UX.md (web-app만)
 - templates/CHANGELOG.md → project-instructions/CHANGELOG.md
 - templates/TROUBLESHOOTING.md → project-instructions/TROUBLESHOOTING.md
+- templates/modification.md → project-instructions/modification.md
 
 ---
 
@@ -135,6 +136,7 @@ project-instructions/
 ├── 04_UI_UX.md            (UI/UX 명세) [web-app만]
 ├── CHANGELOG.md           (변경 이력)
 ├── TROUBLESHOOTING.md     (트러블슈팅)
+├── modification.md        (변경/디버깅 지시서)
 └── assets/                (이미지, 데이터, 코드)
 
 📝 다음 단계:
@@ -147,6 +149,7 @@ project-instructions/
 - 00_PROJECT.md부터 순서대로 작성하는 것을 권장합니다
 - 모든 섹션을 채울 필요는 없습니다 (필요한 것만 작성)
 - 나중에 Claude에게 "이 instruction 기반으로 코드 생성해줘"라고 요청할 수 있습니다
+- 프로젝트 수정/디버깅 시 modification.md를 사용하세요 (에러 로그, 변경 요청 등을 기록)
 ```
 
 ---
