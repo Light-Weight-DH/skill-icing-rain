@@ -8,6 +8,18 @@ Claude Code skill for creating standardized project instruction templates.
 
 ## ✨ What's New
 
+### v1.2 - 2025-11-12
+
+**템플릿 단순화 및 실용성 강화**
+- ✅ **섹션 기반 Wireframe**: 각 섹션(블록)별 역할 → 구성 요소 → 스타일 → 동작 순서로 명확히 작성
+- ✅ **modification.md 추가**: 변경 요청, 에러 로그, 디버깅 지시를 파일로 관리
+- ✅ **예시 주석 강화**: 모든 템플릿에 실용적인 작성 예시 추가
+- ✅ **ASCII Art 제거**: Wireframe 이미지만 사용하는 방식으로 간소화
+
+**사용성 개선**
+- ✅ **CLI 입력 최소화**: `@modification.md`로 긴 에러 로그나 변경사항 전달
+- ✅ **더 명확한 가이드**: 각 필드마다 구체적인 작성 예시 제공
+
 ### v1.1 - 2025-11-10
 
 **UI/UX 템플릿 대폭 개선**
@@ -173,8 +185,8 @@ tech_stack:
 
 `04_UI_UX.md`:
 - Laws of UX 선택: Hick's Law ✅, Jakob's Law ✅, Miller's Law ✅
-- Wireframe 스케치 업로드
-- 각 영역 설명 작성
+- Wireframe 이미지 업로드 (Figma/Excalidraw)
+- 각 섹션별 역할/구성/스타일/동작 작성
 
 `03_IMPLEMENTATION.md`:
 - SOLID 원칙 체크 ✅
@@ -212,6 +224,32 @@ class EmailClassifier:
 - ✅ 일관된 에러 핸들링
 - ✅ 표준 Git 커밋 메시지
 
+**Step 4: 에러 발생 시 modification.md 활용**
+
+프로젝트 중 500 에러 발생!
+
+`modification.md` 작성:
+```markdown
+### 에러 1: 이메일 업로드 시 500 에러
+
+**에러 로그:**
+```
+Error: File size exceeds limit
+  at uploadEmail (/src/upload/email.ts:42)
+```
+
+**해결 방안:**
+- 파일 크기 제한 10MB로 상향
+- 클라이언트 사이드 검증 추가
+```
+
+Claude에게:
+```
+@modification.md 읽고 에러 수정해줘
+```
+
+→ Claude가 즉시 에러 원인 파악 및 수정 코드 생성!
+
 ---
 
 ## 🤖 Using with Claude
@@ -247,11 +285,16 @@ Claude가 할 일:
 
 ### 03_IMPLEMENTATION.md
 - **목적**: 구현 가이드 및 체크리스트
-- **핵심**: 단계별 개발 계획
+- **핵심**: 단계별 개발 계획, SOLID/Clean Code 원칙
 
 ### 04_UI_UX.md
 - **목적**: UI/UX 디자인 명세 (web-app만)
-- **핵심**: 화면 구성, 사용자 플로우
+- **핵심**: 섹션별 Wireframe, Laws of UX 적용
+
+### modification.md (NEW!)
+- **목적**: 프로젝트 변경/디버깅 지시
+- **핵심**: 에러 로그, 변경 요청, 개선사항 기록
+- **사용법**: `@modification.md`로 Claude에게 전달
 
 ---
 
@@ -278,13 +321,13 @@ code 00_PROJECT.md
 
 ## 🌟 Key Features
 
-### 1. Wireframe 중심 UI/UX 설계
-**Before:** 세세한 CSS 변수와 복잡한 템플릿
-**After:** 실용적인 Wireframe + 설명 방식
+### 1. 섹션 기반 Wireframe 설계
+**Before:** 복잡한 CSS 변수와 ASCII art
+**After:** 섹션(블록) 중심의 명확한 구조
 
-- 이미지 또는 ASCII art로 화면 구조 표현
-- 각 영역별 디자인 설명 (위치, 구성, 스타일)
-- 동작 기능 별도 정리 (hover, 클릭, 애니메이션)
+- Wireframe 이미지로 전체 레이아웃 표현
+- 각 섹션별로: **역할 → 구성 요소 → 스타일 → 동작** 순서로 작성
+- 예: "섹션 1: Header - 역할: 로고/네비게이션, 구성: 메뉴 3개, 동작: hover 시 색상 변경"
 
 ### 2. Laws of UX 적용
 7가지 UX 원칙을 체크리스트로 제공:
@@ -310,7 +353,12 @@ code 00_PROJECT.md
 - Good vs Bad 코드 예시
 - Conventional Commits 형식
 
-### 4. AI 친화적 구조
+### 4. 변경/디버깅 지시서 (modification.md)
+- **에러 로그**, 변경 요청, 개선사항을 파일로 관리
+- CLI나 익스텐션에 긴 내용 입력하지 않아도 됨
+- `@modification.md`로 Claude에게 전달하면 즉시 이해
+
+### 5. AI 친화적 구조
 - Claude가 읽고 **바로 코드 생성** 가능
 - **UX 원칙과 코딩 표준 자동 적용**
 - 프롬프트 엔지니어링 불필요
