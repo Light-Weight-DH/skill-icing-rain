@@ -269,6 +269,73 @@ Claude가 할 일:
 
 ---
 
+## 🔄 기존 프로젝트에 적용하기
+
+### Step 1: Instruction 생성
+```bash
+@skill-icing-rain/create-instruction.md
+"기존 프로젝트용 instruction 만들어줘"
+```
+
+### Step 2: 기존 코드 복사
+```bash
+project-instructions/
+└── reference/
+    ├── backend/          # 기존 백엔드 프로젝트 통째로 복사
+    └── frontend/         # 기존 프론트엔드 프로젝트 통째로 복사
+```
+
+**그냥 프로젝트 폴더를 통째로 복사하세요!**
+
+### Step 3: Claude에게 요청
+```
+reference/backend/의 코드 스타일을 참고해서,
+새로운 결제 기능을 추가해줘.
+```
+
+→ Claude가 기존 패턴을 파악하고 일관된 스타일로 코드 생성!
+
+---
+
+## 🎨 UI 수정 워크플로우 (자연어로 수정)
+
+### Step 1: 브라우저에서 요소 찾기
+1. **F12** (개발자 도구) 열기
+2. 요소 선택 도구(화살표 아이콘) 클릭
+3. 수정하고 싶은 카드/버튼/div 클릭
+4. 선택자 복사 (예: `.card-container`, `#user-profile`)
+
+### Step 2: modification.md 작성
+```markdown
+## UI 요소 수정
+
+### UI 수정 1: 프로필 카드 크기 조정
+
+**선택자:** `.card.user-profile`
+
+**원하는 변경:**
+- 카드를 좀 더 크게 만들어주세요
+- 글자를 더 진하게 해주세요
+- 모서리를 둥글게 해주세요
+
+**⚠️ 중요:**
+- 이 카드만 수정하고 다른 요소는 건드리지 마세요
+- 추가 div 절대 추가하지 말 것
+```
+
+### Step 3: Claude에게 전달
+```bash
+@modification.md 읽고 UI 수정해줘
+```
+
+**장점:**
+- ✅ "padding", "border-radius" 같은 기술 용어 몰라도 OK
+- ✅ 자연어로 요청 (예: "좀 더 크게", "간격 벌려줘")
+- ✅ 추가 코드 없이 기존 요소만 수정 (엉킴 방지)
+- ✅ 여러 페이지 동시 수정 가능
+
+---
+
 ## 📋 Template Files Guide
 
 ### 00_PROJECT.md

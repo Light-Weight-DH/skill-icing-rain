@@ -67,10 +67,11 @@ xl: 48px
 
 **섹션 1: Header**
 - **역할**: 로고, 네비게이션, 사용자 정보 표시
+- **권장 선택자**: `header.main-header` 또는 `#app-header`
 - **구성 요소**:
-  - 로고 (좌측, 클릭 시 홈 이동)
-  - 메뉴: "홈", "프로젝트", "설정" (중앙)
-  - 사용자 아바타 + 이름 (우측)
+  - 로고 (좌측, 클릭 시 홈 이동) - 선택자: `.logo`
+  - 메뉴: "홈", "프로젝트", "설정" (중앙) - 선택자: `nav.main-nav`
+  - 사용자 아바타 + 이름 (우측) - 선택자: `.user-profile`
 - **스타일**: 흰색 배경, 높이 64px, 하단 회색 구분선 1px
 - **동작**:
   - 메뉴 hover: Primary 색상으로 변경
@@ -78,8 +79,9 @@ xl: 48px
 
 **섹션 2: Sidebar**
 - **역할**: 주요 기능 네비게이션
+- **권장 선택자**: `aside.sidebar` 또는 `#main-sidebar`
 - **구성 요소**:
-  - 아이콘 + 텍스트: "대시보드", "작업 목록", "통계"
+  - 아이콘 + 텍스트: "대시보드", "작업 목록", "통계" - 선택자: `.nav-item`
 - **스타일**: 연회색 배경 (#f8f9fa), 너비 240px
 - **동작**:
   - 클릭 시 해당 페이지로 이동
@@ -87,10 +89,11 @@ xl: 48px
 
 **섹션 3: Main Content**
 - **역할**: 핵심 콘텐츠 표시
+- **권장 선택자**: `main.content` 또는 `#main-content`
 - **구성 요소**:
-  - Card 1 "최근 프로젝트": 제목, 진행률 바, 날짜
-  - Card 2 "진행 중인 작업": 작업명, 담당자, 상태 뱃지
-  - Card 3 "알림": 메시지 리스트 (최대 5개)
+  - Card 1 "최근 프로젝트": 제목, 진행률 바, 날짜 - 선택자: `.card.recent-projects`
+  - Card 2 "진행 중인 작업": 작업명, 담당자, 상태 뱃지 - 선택자: `.card.ongoing-tasks`
+  - Card 3 "알림": 메시지 리스트 (최대 5개) - 선택자: `.card.notifications`
 - **스타일**: 각 카드 흰색 배경, 그림자 효과, 간격 16px
 - **동작**:
   - Card hover: 그림자 진하게 (0 4px 12px rgba)
@@ -98,6 +101,7 @@ xl: 48px
 
 **섹션 4: Footer**
 - **역할**: 저작권, 링크
+- **권장 선택자**: `footer.main-footer` 또는 `#app-footer`
 - **구성 요소**: "© 2025 프로젝트명", "도움말", "문의"
 - **스타일**: 연회색 배경, 높이 48px, 텍스트 중앙 정렬
 
@@ -119,6 +123,7 @@ Mobile (<768px): Card 1열 배치, H1 폰트 24px로 축소
 
 **섹션 1: [섹션명]**
 - **역할**: [이 섹션의 주요 기능 설명]
+- **권장 선택자**: `[클래스명 또는 ID]` (예: `.section-name` 또는 `#section-id`)
 - **구성 요소**: [버튼, 입력폼, 리스트 등 나열]
 - **스타일**: [배경색, 크기, 간격 등]
 - **동작**: [hover, 클릭, 포커스 시 동작]
@@ -218,6 +223,44 @@ Error:
 - [ ] 색상 대비 4.5:1 이상 (WCAG AA)
 - [ ] 버튼/링크에 aria-label 추가
 - [ ] 스크린 리더 테스트 완료
+
+---
+
+## 선택자 명명 규칙 (CSS 클래스/ID)
+
+> **중요:** UI 수정을 쉽게 하려면 일관된 선택자 명명이 필수입니다!
+
+### 권장 명명 패턴
+
+**레이아웃 섹션:**
+```
+header.main-header / #app-header
+aside.sidebar / #main-sidebar
+main.content / #main-content
+footer.main-footer / #app-footer
+```
+
+**컴포넌트:**
+```
+.card (기본)
+.card.recent-projects (특정 카드)
+.card.user-profile (사용자 프로필 카드)
+
+.btn (버튼)
+.btn-primary / .btn-secondary
+
+.form-group (폼 그룹)
+.input-field (입력 필드)
+```
+
+**페이지별 구분:**
+```
+.dashboard-page (대시보드 페이지 전체)
+.profile-page (프로필 페이지 전체)
+```
+
+### 💡 Tip: modification.md 활용
+나중에 UI 수정 시 브라우저 개발자 도구에서 이 선택자를 복사해서 `modification.md`에 붙여넣으면 Claude가 정확히 해당 요소만 수정합니다!
 
 ---
 

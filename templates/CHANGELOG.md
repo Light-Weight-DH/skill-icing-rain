@@ -13,12 +13,17 @@
 
 ### Added
 <!-- 새로운 기능 -->
-- modification.md 템플릿 추가 (변경/디버깅 지시서)
+- **reference/ 폴더**: 기존 프로젝트 코드 참조용 (backend/, frontend/)
+- **modification.md - UI 요소 수정 섹션**: 브라우저 개발자 도구로 선택자 복사 → 자연어로 UI 수정
+- **04_UI_UX.md - 선택자 명명 규칙**: CSS 클래스/ID 가이드 추가
+- **04_UI_UX.md - 권장 선택자 필드**: 각 섹션별 선택자 명시
 
 ### Changed
 <!-- 기존 기능의 변경사항 -->
-- 04_UI_UX.md 대폭 단순화 및 섹션 기반 Wireframe 방식으로 재설계
-- 예시 주석 강화 (모든 템플릿에 실용적인 예시 추가)
+- 04_UI_UX.md: 섹션 기반 Wireframe 방식으로 재설계
+- 폴더 구조: assets/ 하위에 reference/ 추가
+- create-instruction.md: reference/ 폴더 생성 안내 추가
+- README: 기존 프로젝트 적용 방법, UI 수정 워크플로우 추가
 
 ### Deprecated
 <!-- 곧 제거될 기능 -->

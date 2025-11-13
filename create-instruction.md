@@ -40,16 +40,21 @@ project-instructions/
 ├── 04_UI_UX.md          (web-app 타입만)
 ├── CHANGELOG.md
 ├── TROUBLESHOOTING.md    (선택사항)
-└── assets/
-    ├── images/
-    ├── data/
-    └── code/
+├── modification.md
+├── assets/
+│   ├── images/          (Wireframe, 스크린샷 등)
+│   ├── data/            (샘플 데이터, DB 스키마 등)
+│   └── code/            (설정 파일 예시 등)
+└── reference/
+    ├── backend/         (기존 백엔드 코드 참조용)
+    └── frontend/        (기존 프론트엔드 코드 참조용)
 ```
 
 **중요:**
 - `04_UI_UX.md`는 **web-app 타입일 때만** 생성
 - `TROUBLESHOOTING.md`는 선택사항이지만 권장
 - `assets/` 폴더는 항상 생성 (하위 폴더 포함)
+- `reference/` 폴더: **기존 프로젝트에서 이어서 작업할 때** 기존 코드를 여기에 복사
 
 ---
 
@@ -144,12 +149,14 @@ project-instructions/
 2. 각 섹션의 가이드 주석을 참고하세요
 3. 필요 없는 섹션은 삭제하셔도 됩니다
 4. assets/ 폴더에 참고 이미지나 코드를 추가하세요
+5. **기존 프로젝트 이어서 작업하는 경우**: reference/ 폴더에 기존 백엔드/프론트엔드 코드를 복사하세요
 
 💡 팁:
 - 00_PROJECT.md부터 순서대로 작성하는 것을 권장합니다
 - 모든 섹션을 채울 필요는 없습니다 (필요한 것만 작성)
 - 나중에 Claude에게 "이 instruction 기반으로 코드 생성해줘"라고 요청할 수 있습니다
-- 프로젝트 수정/디버깅 시 modification.md를 사용하세요 (에러 로그, 변경 요청 등을 기록)
+- **UI 수정**: 브라우저 개발자 도구(F12)로 선택자 복사 → modification.md에 자연어로 변경 요청
+- **기존 코드 참조**: reference/backend/, reference/frontend/에 기존 코드 넣으면 Claude가 참고합니다
 ```
 
 ---
